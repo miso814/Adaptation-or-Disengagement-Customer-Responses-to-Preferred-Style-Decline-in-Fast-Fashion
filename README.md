@@ -1,2 +1,9 @@
 # Adaptation-or-Disengagement-Customer-Responses-to-Preferred-Style-Decline-in-Fast-Fashion
-Code for the IRP project: Adaptation or Disengagement? Customer Responses to Preferred Style Decline in Fast Fashion.
+
+This repository contains the R code used for the IRP project "Adaptation or Disengagement? Customer Responses to Preferred Style Decline in Fast Fashion." The project uses H&M transaction and article data to study how customers respond when their inferred preferred styles decline in transaction-based active presence.
+
+The raw data come from the H&M Personalized Fashion Recommendations dataset on Kaggle. The raw data files are not included in this repository because of file size and data-sharing restrictions. To reproduce the analysis, download the dataset from Kaggle and place transactions_train.csv, articles.csv, and customers.csv in a local folder. The scripts currently assume that the files are stored in ~/Desktop/H&M, but the data_dir path can be changed if the files are stored elsewhere.
+
+The code should be run in the following order. First, main data construction code.R constructs the main customer-event analysis dataset by defining product styles, identifying transaction-based style decline events, retaining valid events, and constructing pre-event controls and post-event outcomes. Second, baseline_event_fe_regressions_table4.R runs the baseline event fixed effects regressions reported in Table 4 of the paper. Third, response_type_decomposition_table5.R creates the response-type decomposition reported in Table 5. Finally, high_value_heterogeneity_regressions_table6.R runs the high-value heterogeneity regressions reported in Table 6.
+
+The analysis uses transaction-based active article presence as a proxy for style activity. Because the H&M dataset does not contain true inventory or stock availability records, the identified style decline events should not be interpreted as confirmed supply shocks.
